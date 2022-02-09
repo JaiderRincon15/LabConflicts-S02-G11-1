@@ -20,6 +20,7 @@
  * along withthis program.  If not, see <http://www.gnu.org/licenses/>.
  """
 
+from fileinput import filename
 import config as cf
 import model
 import csv
@@ -52,6 +53,7 @@ def loadTags(filename):
     return tags
 
 
-def loadBooksTags(catalog):
+def loadBooksTags(filename):
     # TODO: Modificación de Est-1 y Est-2 en el Lab 2
-    pass
+    booktagsfile = cf.data_dir + filename
+    return model.addBooksTags(booktagsfile)
